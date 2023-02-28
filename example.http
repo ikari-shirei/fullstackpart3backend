@@ -1,0 +1,26 @@
+GET http://localhost:3001/api/persons
+
+###
+
+GET http://localhost:3001/api/persons/3
+
+###
+
+DELETE http://localhost:3001/api/persons/5
+
+###
+
+POST http://localhost:3001/api/persons
+content-type: application/json
+
+{
+    "id": 2141,
+    "name": "ewqwqdqqwdqwwdeqweqw",
+    "number": "040-123456"
+}
+
+###
+
+GET http://localhost:3001/api/sos/3
+
+###
