@@ -3,6 +3,7 @@ var path = require('path')
 var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 const cors = require('cors')
+require('dotenv').config()
 
 var indexRouter = require('./routes/index')
 
@@ -29,5 +30,21 @@ const unknownEndpoint = (request, response) => {
 }
 
 app.use(unknownEndpoint)
+
+const errorHandler = (error, request, response, next) => {
+  console.error(error.message)
+
+  if (error.name === 'CastError') {
+    return response.status(400).send({ error: 'malformatted id' })
+  }
+
+  if (error.name === 'NullError') {
+    return response.status(500).send({ error: "person doesn't exist" })
+  }
+
+  next(error)
+}
+
+app.use(errorHandler)
 
 module.exports = app

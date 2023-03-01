@@ -2,7 +2,7 @@ GET http://localhost:3001/api/persons
 
 ###
 
-GET http://localhost:3001/api/persons/3
+GET http://localhost:3001/api/persons/63fe17c66a2c935aad6562f0
 
 ###
 
@@ -14,8 +14,7 @@ POST http://localhost:3001/api/persons
 content-type: application/json
 
 {
-    "id": 2141,
-    "name": "ewqwqdqqwdqwwdeqweqw",
+    "name": "ew",
     "number": "040-123456"
 }
 
