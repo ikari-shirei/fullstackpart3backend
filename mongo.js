@@ -24,7 +24,7 @@ const newPerson = new Person({
   number: process.argv[4],
 })
 
-newPerson.save().then((result) => {
+newPerson.save().then(() => {
   console.log(`added ${newPerson.name} number ${newPerson.number} to phonebook`)
   mongoose.connection.close()
 })
